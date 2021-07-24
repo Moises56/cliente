@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "titulos";
+    src: url("/assets/fonts/Courgette/Courgette-Regular.ttf");
+
+  } 
+
+  h4, h2{
+      font-family: 'titulos';
+  }
+
+  .ico-div {
+    border: 1px solid #E90808;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    background-color: #E90808;
+    transform: translate(115px, 9px);
+    color: #ffffff;
+  }
+
+  .ico-div .ico-p {
+    margin-top: 11px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 3em;
+    transform: translateY(-19px);
+  }
