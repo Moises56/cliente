@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "titulos";
+    src: url("/assets/fonts/Courgette/Courgette-Regular.ttf");
+
+  } 
+
+  span{
+      font-family: 'titulos';
+  }
