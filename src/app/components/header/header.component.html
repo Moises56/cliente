@@ -2,18 +2,27 @@
     <div class="container">
         <img class="img-logo" src="assets/logo/logomotorista.png" alt="..." />
         <!-- <a class="navbar-brand" href="#page-top"></a> -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
             <fa-icon [icon]="faBars">Menu</fa-icon>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse" id="navbarResponsive" [ngbCollapse]="isMenuCollapsed">
             <ul class="navbar-nav ms-auto ml-auto py-4 py-lg-0">
                 <li class="nav-item"><a class="nav-link text-white" routerLinkActive="active" routerLink="/">Inicio</a></li>
                 <!-- <ng-container *ngIf="!useClienteService.loggedIng(); else loggedIng"> -->
                 <li class="nav-item"><a class="nav-link text-white" routerLinkActive="active" routerLink="/signup">Registrarse</a></li>
                 <li class="nav-item"><a class="nav-link text-white" routerLinkActive="active" routerLink="/signin">Iniciar Sessión</a></li>
-                <li class="nav-item"><a class="nav-link text-white" routerLinkActive="active" routerLink="/categorias">Categorias</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#about">Se Parte</a></li>
+
+                <li ngbDropdown class="nav-item d-inline-block">
+                  <a id="dropdownBasic1" ngbDropdownToggle class="nav-link text-white">Categorias</a>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem routerLink="/categorias">Salud</button>
+                    <button ngbDropdownItem routerLink="/categorias">Cafeteria</button>
+                    <button ngbDropdownItem routerLink="/categorias">Comidas</button>
+                  </div>
+            
+                </li>
+                
+                <li class="nav-item"><a class="nav-link text-white"routerLinkActive="active" routerLink="/cartshop">Productos</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#team">Equipo</a></li>
                 <!-- </ng-container> -->
                 <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contactos</a></li> -->

@@ -14,9 +14,9 @@
     width: 70px;
     height: 70px;
     background-color: #E90808;
-    transform: translate(115px, 9px);
+    transform: translate(75px, 9px);
     color: #ffffff;
-  }
+}
 
   .ico-div .ico-p {
     margin-top: 11px;
@@ -27,3 +27,76 @@
     font-size: 3em;
     transform: translateY(-19px);
   }
+
+  
+/* TODO ---->  @medias */
+
+
+  @media(max-width: 540px){
+    .ico-div {
+      border: 1px solid #E90808;
+      border-radius: 50px;
+      width: 70px;
+      height: 70px;
+      background-color: #E90808;
+      transform: translate(134px, 9px);
+      color: #ffffff;
+    }
+}
+
+
+@media (min-width: 768) {
+  .ico-div {
+    border: 1px solid #E90808;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    background-color: #E90808;
+    transform: translate(75px, 9px);
+    color: #ffffff;
+
+  }
+}
+
+@media (min-width: 1024px) {
+  .ico-div {
+    border: 1px solid #E90808;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    background-color: #E90808;
+    transform: translate(115px, 9px);
+    color: #ffffff;
+
+  }
+  
+}
+
+
+@media (min-width: 1125px) {
+   
+  .ico-div {
+    border: 1px solid #E90808;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    background-color: #E90808;
+    transform: translate(115px, 9px);
+    color: #ffffff;
+
+  }
+}
+
+@media (min-width: 1200px) {
+   
+  .ico-div {
+    border: 1px solid #E90808;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    background-color: #E90808;
+    transform: translate(145px, 9px);
+    color: #ffffff;
+ 
+  }
+}

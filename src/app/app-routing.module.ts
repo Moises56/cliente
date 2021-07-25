@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 /*components*/
-import {InicioComponent} from './components/inicio/inicio.component';
-import {PerfilComponent} from './components/perfil/perfil.component';
-import {AuthComponent} from './components/auth/auth.component';
-import {CategoriasComponent} from './components/categorias/categorias.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+import { CartshopComponent } from './components/cartshop/cartshop.component';
+import { CartdetalleComponent } from './components/cartdetalle/cartdetalle.component';
+import { ProcesscompraComponent } from './components/processcompra/processcompra.component';
 
 
 const routes: Routes = [
@@ -33,6 +36,18 @@ const routes: Routes = [
 {
   path: 'categorias',
   component: CategoriasComponent
+},
+{
+  path: 'cartshop',
+  component: CartshopComponent
+},
+{
+  path: 'cartdetalle',
+  component: CartdetalleComponent
+},
+{
+  path: 'processcompra',
+  component: ProcesscompraComponent
 },
 ];
 

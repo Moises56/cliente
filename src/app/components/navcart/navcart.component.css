@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "titulos";
+    src: url("/assets/fonts/Courgette/Courgette-Regular.ttf");
+  
+  } 
+  
+  h1, h4, h5, span, p, li, a, th, td, button{
+      font-family: 'titulos';
+  }
+  
+  .bg-navBar{
+      color: #fff;
+      background: rgb(0, 0, 0);
+  }
+  
+  .img-cartShop{
+      width: 15%;
+  }
+  
+  .div-cabecera{
+    background-color: rgb(61, 41, 17);
+  }
+  
+  
+  /* TODO ---->  @medias */
+  
+  @media (min-width: 375px) {
+       
+      .img-cartShop {
+          width: 35%;
+      }
+    }
+  @media (min-width: 360px) {
+       
+      .img-cartShop {
+          width: 35%;
+      }
+    }
+  
+    @media (min-width: 1024px) {
+       
+      .img-cartShop {
+          width: 13%;
+      }
+    }
+   
+    @media (min-width: 1200px) {
+       
+      .img-cartShop {
+          width: 13%;
+      }
+    }
+    @media (min-width: 1125px) {
+       
+      .img-cartShop {
+          width: 13%;
+      }
+    }
+  
+  

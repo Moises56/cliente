@@ -1,0 +1,73 @@
+<!--* Navigation-->
+<app-navcart></app-navcart>
+
+  <div class="container pt-5">
+    <h1>Procesar Compra</h1>
+</div>
+
+<div class="container pt-5">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                 <th>#</th>
+                 <th>Productos</th>
+                 <th>Cantidad</th>
+                 <th>Precio</th>
+                 <th>Acciones/+-</th>
+                </tr>
+            </thead>
+            <tbody>
+                  <tr>
+                        <td data-label="#">1</td>
+                        <td data-label="Productos">producto 1</td>
+                        <td data-label="Cantidad">4</td>
+                        <td data-label="Precio">50</td>
+                        <td data-label="Acciones">
+                            <button class="btn btn-outline-primary">+</button>
+                            <button class="btn btn-outline-danger">-</button>
+                        </td>
+                  </tr>
+        
+                  <tr>
+                        <td data-label="#">2</td>
+                        <td data-label="Productos">producto 2</td>
+                        <td data-label="Cantidad">1</td>
+                        <td data-label="Precio%">70</td>
+                        <td data-label="Acciones">
+                            <button class="btn btn-outline-primary">+</button>
+                            <button class="btn btn-outline-danger">-</button>
+                        </td>
+                  </tr>
+        
+                  <tr>
+                        <td data-label="#">3</td>
+                        <td data-label="Productos">producto 3</td>
+                        <td data-label="Cantidad">2</td>
+                        <td data-label="Precio">90</td>
+                        <td data-label="Acciones">
+                            <button class="btn btn-outline-primary">+</button>
+                            <button class="btn btn-outline-danger">-</button>
+                        </td>
+                  </tr>
+        
+                  <tr>
+                        <td data-label="#">4</td>
+                        <td data-label="Productos">producto 4</td>
+                        <td data-label="Cantidad">3</td>
+                        <td data-label="Precio">30</td>
+                        <td data-label="Acciones">
+                            <button class="btn btn-outline-primary">+</button>
+                            <button class="btn btn-outline-danger">-</button>
+                        </td>
+                  </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+  <div class="container pt-5 pb-5 text-center">
+      <h2>Total A Pagar: $.500</h2>
+    <!-- <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">Cerrar</button> -->
+  <button type="button" class="btn btn-outline-dark">Pagar</button>
+</div>

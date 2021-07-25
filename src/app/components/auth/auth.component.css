@@ -10,20 +10,28 @@
 
 
 body{
-	font-family: 'Poppins', sans-serif;
+	font-family: 'titulos', 'Poppins', sans-serif;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 1.7;
 	color: #c4c3ca;
-
-  background: #F3904F;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #3B4371, #F3904F);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #108dc7 !important;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ef8e38, #108dc7) !important;  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ef8e38, #108dc7) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 
 	/* background-color: #4953b4; */
 	overflow-x: hidden;
 }
+
+.auth{
+  color: #f7f6fa;
+  /* background: #108dc7 !important;  
+  background: -webkit-linear-gradient(to right, #ef8e38, #108dc7) !important;  
+  background: linear-gradient(to right, #ef8e38, #108dc7) !important;  */
+  
+}
+
 a {
 	cursor: pointer;
   transition: all 200ms linear;
@@ -49,6 +57,7 @@ h6 span{
   padding: 0 20px;
   text-transform: uppercase;
   font-weight: 700;
+  color: red;
 }
 .section{
   position: relative;
