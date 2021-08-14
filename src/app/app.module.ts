@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
@@ -13,12 +16,12 @@ import { AboutComponent } from './components/about/about.component';
 import { TeamComponent } from './components/team/team.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-import { InicioComponent } from './components/inicio/inicio.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { CartshopComponent } from './components/cartshop/cartshop.component';
 import { CartdetalleComponent } from './components/cartdetalle/cartdetalle.component';
 import { ProcesscompraComponent } from './components/processcompra/processcompra.component';
 import { NavcartComponent } from './components/navcart/navcart.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -31,18 +34,22 @@ import { NavcartComponent } from './components/navcart/navcart.component';
     TeamComponent,
     FooterComponent,
     PerfilComponent,
-    InicioComponent,
     CategoriasComponent,
     CartshopComponent,
     CartdetalleComponent,
     ProcesscompraComponent,
-    NavcartComponent
+    NavcartComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
