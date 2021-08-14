@@ -6,93 +6,19 @@
             <h3 class="section-subheading text-muted">Variedad de Empresas & Productos en un solo click</h3>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4" routerLink="/cartshop">
+            <!-- <div class="col-lg-4 col-sm-6 mb-4" routerLink="/cartshop" *ngFor="let cat of Categorias"> -->
+            <div class="col-lg-4 col-sm-6 mb-4" *ngFor="let cat of Categorias">
                 <!-- Portfolio item 1-->
-                <div class="portfolio-item">
+                <div class="portfolio-item" (click)="getEmpresas(cat._id)">
                     <a class="portfolio-link" data-bs-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/1.png" alt="..." />
+                        <img class="img-fluid" src="/assets/img/portfolio/1.png" alt="..." />
                     </a>
                     <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Comidas</div>
-                        <div class="portfolio-caption-subheading text-muted">Platillos a tu gusto.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4" routerLink="/cartshop">
-                <!-- Portfolio item 2-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/2.png" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Salud</div>
-                        <div class="portfolio-caption-subheading text-muted">Todo para cuidar su salud.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4" routerLink="/cartshop">
-                <!-- Portfolio item 3-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/3.png" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Antojitos</div>
-                        <div class="portfolio-caption-subheading text-muted">A toda hora del dia.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0" routerLink="/cartshop">
-                <!-- Portfolio item 4-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/4.png" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Refrescos</div>
-                        <div class="portfolio-caption-subheading text-muted">Diferentes sabores para ti.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0" routerLink="/cartshop">
-                <!-- Portfolio item 5-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/5.png" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Postres</div>
-                        <div class="portfolio-caption-subheading text-muted">Disfruta a cada instante.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6" routerLink="/cartshop">
-                <!-- Portfolio item 6-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/6.png" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Café</div>
-                        <div class="portfolio-caption-subheading text-muted">Disfruta todo el dia.</div>
+                        <div class="portfolio-caption-heading">{{cat.nombreCategoria}}</div>
+                        <div class="portfolio-caption-subheading text-muted">{{cat.descripcion}}</div>
                     </div>
                 </div>
             </div>
