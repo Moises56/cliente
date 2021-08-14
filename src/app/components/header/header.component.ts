@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faBars} from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,7 +13,8 @@ public isMenuCollapsed = true;
 
   faBars = faBars;
   constructor(
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +29,12 @@ public isMenuCollapsed = true;
         centered: false
       }
     );
+  }
+
+  // tslint:disable-next-line:typedef
+  registrarse(){
+    console.log('registrarse');
+    this.router.navigate(['/signup']);
   }
 
 }

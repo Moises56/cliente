@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 /*components*/
+import { AppComponent } from './components/app/app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -13,36 +14,36 @@ import { ProcesscompraComponent } from './components/processcompra/processcompra
 
 const routes: Routes = [
   {
-  path: '',
-  redirectTo: '/inicio',
-  pathMatch: 'full'
-},
-{
-  path: 'inicio',
-  component: InicioComponent
-},
-{
+    path: '',
+    redirectTo: '/inicio',
+    pathMatch: 'full'
+  },
+    {
+      path: 'inicio',
+      component: InicioComponent
+  },
+ {
   path: 'perfil',
   component: PerfilComponent
-},
-{
+ },
+ {
   path: 'signin',
   component: AuthComponent
-},
-{
+ },
+ {
   path: 'signup',
   component: AuthComponent
-},
-{
+ },
+ {
   path: 'categorias',
   component: CategoriasComponent
-},
-{
-  path: 'cartshop',
+ },
+ {
+  path: 'cartshop/:idcat',
   component: CartshopComponent
-},
+ },
 {
-  path: 'cartdetalle',
+  path: 'cartdetalle/:idpro',
   component: CartdetalleComponent
 },
 {

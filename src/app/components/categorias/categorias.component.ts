@@ -24,7 +24,6 @@ export class CategoriasComponent implements OnInit {
     .subscribe(
       res => {
         // console.log(res);
-        this.Categorias = res;
       },
       err => console.log(err)
     );
