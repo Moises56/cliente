@@ -11,14 +11,23 @@ export class UsuariosService {
     private URLPRO = 'https://somopa.herokuapp.com/usercliente';
 
     // ?Para Desarrollo
-    private URLDES =  ' http://localhost:3000/usercliente';
+    private URLDES =  'http://localhost:3000/usercliente';
 
   constructor(private httpClient: HttpClient) { }
 
 
-  // *1 Obener todas las Categorias
-  signup(): Observable<any>{
-    return this.httpClient.get(this.URLDES + '/user/signup', {});
+  // *2 registro usuario Cliente
+  signup(data: any): Observable<any>{
+    return this.httpClient.post(
+      this.URLDES + '/user/signup',
+      {
+        nombre: data.user.nombre,
+        apellido: data.user.apellido,
+        email: data.user.email,
+        password: data.user.password,
+        confir_password: data.user.confir_password
+      }
+    );
   }
 
 
