@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+
 import { HttpInterceptor } from '@angular/common/http';
 import { UsuariosService} from '../services/usuarios.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,4 +19,9 @@ export class TokeninterceptorService implements HttpInterceptor {
      });
     return next.handle(tokenizeReq);
    }
+  
+export class TokeninterceptorService {
+
+  constructor() { }
+
 }

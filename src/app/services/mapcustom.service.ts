@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
+
 import * as mapboxgl from 'mapbox-gl';
 // import { MapboxGeocoder } from '@mapbox/mapbox-gl-geocoder';
 import { promise } from 'selenium-webdriver';
 import { environment } from './../../environments/environment.prod';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class MapcustomService {
+
   // mapbox = (mapboxgl as typeof mapboxgl);
   // map: mapboxgl.Map;
   // style = 'mapbox://styles/mapbox/streets-v11';
@@ -44,6 +47,6 @@ export class MapcustomService {
   //   });
   // }
 
+  constructor() {}
 
-  
 }

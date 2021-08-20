@@ -11,5 +11,6 @@ export class AccesspointService {
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onIdUSer: EventEmitter<any> = new EventEmitter();
 
+
   constructor() { }
 }
