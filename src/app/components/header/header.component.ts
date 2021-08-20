@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faBars} from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { UsuariosService } from './../../services/usuarios.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,6 +14,7 @@ public isMenuCollapsed = true;
 
   faBars = faBars;
   constructor(
+    public usuariosService: UsuariosService,
     private modalService: NgbModal,
     private router: Router
   ) { }

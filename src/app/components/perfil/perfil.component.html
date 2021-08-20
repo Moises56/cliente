@@ -1,21 +1,82 @@
-<section id="home"><h2>Home</h2></section>
-    <section id="services"><h2>Services</h2></section>
+
+<app-navcart></app-navcart>
+<!-- <ngb-alert id="1" (close)="cerrar('1')">
+    <i>Alert</i> que es <b>Cool</b>
+</ngb-alert> -->
+
+<section id="home">
+    <!-- <h2>inicio</h2> -->
+    
+    <!-- <ng-template #loggedIng> -->
+     
+        <div class="container text-center ordern">
+                <!-- <a type="button" class="btn btn-outline-info" href="/notes">Regresar</a> -->
+        <div class="row mt-0">
+        
+            <div class="col-md-8 offset-2" >
+              <div style="color:rgb(255, 145, 0)" class="card-header text-center pt-3">
+                <h5 class="card-header bg-dark" *ngFor="let orden of Orden">Bienvenido {{orden.nombre}} {{orden.apellido}}</h5>
+              </div>
+              <div style="color:rgb(255, 145, 0)" class="card-header text-center ">
+                <h5 class="card-header bg-dark"> Tu Historial de Compras</h5>
+              </div>
+              
+              <div class="card-body " *ngFor="let orden of Orden">
+                <p class="text-white">
+                  Unidades: <span class="badge badge-light" >{{orden.order.length}}</span>
+                  <span class="sr-only">unread messages</span>
+                </p>
+                <ul class="list-group" *ngFor="let order of orden.order">
+                  
+                  <li class="list-group-item" >
+                    <img src="{{order.imagenProducto}}" class="avatar">
+                    |{{order.nombreProducto}} | <span class="badge badge-info">{{order.cantidad}}</span> |Precio:
+                    <span class="badge badge-primary pill font-weight-bold  ml-auto">
+                      ${{order.precio}}
+                    </span>
+          
+                  </li>
+              
+                  <a type="button" class="btn btn-link">
+                    Fecha: <span class="badge badge-link" *ngFor="let orden of Orden">{{orden.createdAt}}</span>
+                  </a>
+                </ul>
+
+              </div>
+              <div style="color:rgb(39, 23, 3) " class="card-footer">
+                <button type="button" class="btn btn-warning">
+                  Total Lps.: <span class="badge badge-light">$1000</span>
+                  <span class="sr-only">unread messages</span>
+                </button>
+          
+                <!-- {{!-- <strong class="badge badge-info pill font-weight-bold  ml-auto">Total Lps.{{this.cart.totalPrice }}</strong> --}} -->
+              </div>
+              <hr class="new2">
+              
+            </div>
+          </div>
+          <br><br>
+        </div>
+  <!-- </ng-template> -->
+
+</section>
+    <!-- <section id="services"><h2>Services</h2></section>
     <section id="gallery"><h2>Gallery</h2></section>
-    <section id="contact"><h2>Contact</h2></section>
+    <section id="contact"><h2>Contact</h2></section> -->
     <ul class="sidebar">
         <li class="nav-item">
-            <a href="#home" class="nav-link">
+            <a routerLink="/inicio" class="nav-link">
                 <fa-icon  [icon]=" faHome "></fa-icon>
-                <span class="title">Home</span>
+                <span class="title">Inicio</span>
             </a>
         </li>
         <li class="nav-item">
-            <a href="#services" class="nav-link">
+            <a routerLink="/perfil" class="nav-link" >
                 <fa-icon  [icon]=" faCogs "></fa-icon>
-                <span class="title">Services</span>
+                <span class="title">Ordenes</span>
             </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="#gallery" class="nav-link">
                 <fa-icon  [icon]=" faImages "></fa-icon>
                 <i class="fas fa-images"></i>
@@ -27,5 +88,5 @@
                 <fa-icon  [icon]=" faAddressBook "></fa-icon>
                 <span class="title">Contact</span>
             </a>
-        </li>
+        </li> -->
     </ul>

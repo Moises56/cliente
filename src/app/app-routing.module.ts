@@ -10,6 +10,10 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
 import { CartshopComponent } from './components/cartshop/cartshop.component';
 import { CartdetalleComponent } from './components/cartdetalle/cartdetalle.component';
 import { ProcesscompraComponent } from './components/processcompra/processcompra.component';
+import { NavcartComponent } from './components/navcart/navcart.component';
+
+import { AuthGuard } from './auth.guard';
+
 
 
 const routes: Routes = [
@@ -23,16 +27,18 @@ const routes: Routes = [
       component: InicioComponent
   },
  {
-  path: 'perfil',
-  component: PerfilComponent
- },
- {
   path: 'signin',
   component: AuthComponent
  },
  {
   path: 'signup',
   component: AuthComponent
+ },
+ {
+  path: 'perfil',
+  component: PerfilComponent,
+  canActivate: [AuthGuard] // * Protegiendo la ruta
+
  },
  {
   path: 'categorias',
@@ -42,6 +48,10 @@ const routes: Routes = [
   path: 'cartshop/:idcat',
   component: CartshopComponent
  },
+//  {
+//   path: 'navcart/:idPro',
+//   component: NavcartComponent
+//  },
 {
   path: 'cartdetalle/:idpro',
   component: CartdetalleComponent
