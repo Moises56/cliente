@@ -29,7 +29,7 @@ section h2{
 }
 
 /** Style the section */
-#home {background-color: #ff7a00;}
+#home {background-color: #ABB7C1;}
 #services {background-color: #67ffe7}
 #gallery {background-color: #ffa855;}
 #contact { background-color: #00ffa7;}
@@ -90,4 +90,47 @@ section h2{
 
 .nav-item:hover .title{
     transform: translateX(0);
+}
+
+
+
+/** */
+
+
+img.avatar {
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 50px;
+    width: 50px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+  }
+
+  hr.new2 {
+    border-top: 1px dashed red;
+  }
+
+.ordern{
+    transform: translateY(73px);
+}
+
+.badge-info {
+    color: #e0dbdb;
+    background-color: #d04193;
+    font-size: medium;
+}
+
+.badge-primary {
+    color: #fff;
+    background-color: #b632bb;
+    font-size: medium;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: larger;
 }

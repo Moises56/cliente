@@ -9,8 +9,10 @@
             <ul class="navbar-nav ms-auto ml-auto py-4 py-lg-0" style="cursor: pointer;">
                 <li class="nav-item"><a class="nav-link text-white" routerLinkActive="active" routerLink="/inicio" >Inicio</a></li>
                 <!-- <ng-container *ngIf="!useClienteService.loggedIng(); else loggedIng"> -->
-                <li class="nav-item"><a class="nav-link text-white" routerLinkActive="active" (click)="registrarse()" >Registrarse</a></li>
+              <ng-container *ngIf="!usuariosService.loggedIng(); else loggedIng">
+                <!-- <li class="nav-item"><a class="nav-link text-white" routerLinkActive="active" (click)="registrarse()" >Registrarse</a></li> -->
                 <li class="nav-item"><a class="nav-link text-white" routerLinkActive="active" >Iniciar Sessión</a></li>
+              </ng-container>
 
                 <li ngbDropdown class="nav-item d-inline-block">
                   <a id="dropdownBasic1" ngbDropdownToggle class="nav-link text-white" routerLink="/categorias">Categorias</a>
@@ -22,16 +24,16 @@
             
                 </li>
                 
-                <li class="nav-item"><a class="nav-link text-white"routerLinkActive="active" >Productos</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#team">Equipo</a></li>
+                <!-- <li class="nav-item"><a class="nav-link text-white"routerLinkActive="active" >Productos</a></li> -->
+                <!-- <li class="nav-item"><a class="nav-link text-white" href="#team">Equipo</a></li> -->
                 <!-- </ng-container> -->
                 <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contactos</a></li> -->
                 <ng-template #loggedIng>
                     <li class="nav-item">
-                      <a class="nav-link btnLogout" routerLinkActive="active" >Mi Perfil</a>
+                      <a class="nav-link btnLogout" routerLinkActive="active" routerLink="/perfil" >Mi Perfil</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link btnLogout" >Cerrar</a>
+                      <a class="nav-link btnLogout"  (click)="usuariosService.logout()">Cerrar</a>
                     </li>
                   </ng-template>    
             </ul>

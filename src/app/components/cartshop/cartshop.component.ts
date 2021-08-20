@@ -3,6 +3,8 @@ import { faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CategoriasService } from '../../services/categorias.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AccesspointService } from './../../services/accesspoint.service';
+import { CartService } from './../../services/cart.service';
 
 
 @Component({
@@ -27,12 +29,19 @@ export class CartshopComponent implements OnInit {
   descripcionProducto!: string;
   precioProducto!: string;
   imgProductos!: string;
+  idProducto!: string;
+  idcatCart!: string;
+
+
 
   constructor(
     private modalService: NgbModal,
     private categoriasService: CategoriasService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private accesspointService: AccesspointService,
+    private cartService: CartService,
+
   ) { }
 
   Empresas: any = [];
@@ -42,6 +51,7 @@ export class CartshopComponent implements OnInit {
       const { params } = paramMap;
       console.log(params);
       console.log(params.idcat);
+      this.idcatCart = params.idcat;
       this.categoriasService.onIdCat.emit(params.idcat);
       this.getEmpresas(params.idcat);
     });
@@ -99,7 +109,18 @@ export class CartshopComponent implements OnInit {
       this.descripcionProducto = proDe.descripcion;
       this.precioProducto = proDe.precio;
       this.imgProductos = proDe.imagenProducto;
+      this.idProducto = proDe._id;
       // this.categoriasService.onIdEmp.emit(idEmp);
+    }
+
+
+    // tslint:disable-next-line:typedef
+    addCart(idProducto: any){
+      // window.alert('Producto Agregado' + idProducto._id);
+      console.log(idProducto);
+      // this.router.navigate([`/navcart/${idProducto}`]);
+      this.accesspointService.onIdProCart.emit(idProducto);
+
     }
 
 

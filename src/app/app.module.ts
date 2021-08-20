@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,11 @@ import { CartdetalleComponent } from './components/cartdetalle/cartdetalle.compo
 import { ProcesscompraComponent } from './components/processcompra/processcompra.component';
 import { NavcartComponent } from './components/navcart/navcart.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+
+import { AuthGuard } from './auth.guard';
+import { TokeninterceptorService } from './services/tokeninterceptor.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
     CartdetalleComponent,
     ProcesscompraComponent,
     NavcartComponent,
-    InicioComponent
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,10 +53,18 @@ import { InicioComponent } from './components/inicio/inicio.component';
     ReactiveFormsModule,
     FontAwesomeModule,
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokeninterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
