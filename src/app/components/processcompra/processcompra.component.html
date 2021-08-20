@@ -1,0 +1,120 @@
+<!--* Navigation-->
+<app-navcart></app-navcart>
+
+  <div class="container pt-5">
+    <h1>Procesar Compra</h1>
+</div>
+
+<div class="container pt-5">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                 <th>#</th>
+                 <th>Productos</th>
+                 <th>Cantidad</th>
+                 <th>Precio</th>
+                 <th>Acciones/+-</th>
+                </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let item of Items">
+                        <td data-label="#">1</td>
+                        <td data-label="Productos">{{item.nombreProducto}}</td>
+                        <td data-label="Cantidad">{{item.cantidad}}</td>
+                        <td data-label="Precio">{{item.precio}}</td>
+                        <td data-label="Acciones">
+                            
+                                <!-- <button class="btn btn-outline-primary">+</button> -->
+                                <button (click)="btnDeletePro(item._id)" type="submit" class="btn btn-outline-danger">
+                                    <fa-icon [icon]="faTrash"></fa-icon>
+                                </button>
+                           
+                        </td>
+                  </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<div class="container pt-5 pb-5 text-center">
+<!-- <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <div>
+            <label for="direccion">direccion</label>
+            <input id="direccion" formControlName="direccion" type="text">
+        </div>
+        <div>
+            <label for="email">email</label>
+            <input id="email" formControlName="email" type="text">
+        </div> -->
+
+        <button (click)="abrirOrdenModal(openNewordenModal)" type="submit" class="btn btn-outline-dark">Pagar</button>          
+    <!-- </form> -->
+
+            
+            <div class="wrapper">
+                <div id="map" #asMap class="map-container"></div>
+            </div>
+    
+       
+</div>
+
+
+
+  <!-- <div class="container pt-5 pb-5 text-center">
+      <h2>Total A Pagar: $.500</h2> -->
+    <!-- <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">Cerrar</button> -->
+  <!-- <button type="button" class="btn btn-outline-dark">Pagar</button>
+  
+</div> -->
+
+
+<!-- Todo Modal Nuevo Orden -->
+  <ng-template #openNewordenModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Procesando Orden</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cerro con la X')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" >
+      <div class="row">
+        <div class="col-12">
+  
+            <form [formGroup]='formNewOrden'>
+                   
+                <div>
+                    <label for="direccion">direccion</label>
+                    <input class="form-control mt-2" id="direccion" formControlName="direccion" type="text">
+                </div>
+                <div>
+                    <label for="email">email</label>
+                    <input class="form-control mt-2" id="email" formControlName="email" type="text">
+                </div> 
+
+              </form>
+
+              <!-- <div class="container pt-5 pb-5">
+                <div class="card">
+                    <h3 class="card-title">MAPA</h3>
+                    <div class="card-body">
+                        
+                        <div class="wrapper">
+                            <div id="map" #asMap class="map-container"></div>
+                        </div>
+                
+                    </div>
+                </div>
+              </div> -->
+  
+        </div>
+      </div>
+        
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-success" (click)="modal.close('Boton Cerrar')">Cerrar</button>
+      <button type="button" class="btn btn-outline-success" (click)="saveOrden()">Save</button>
+    </div>
+  </ng-template>
+  
+  

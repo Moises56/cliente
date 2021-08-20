@@ -6,7 +6,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isMenuCollapsed">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" style="cursor: pointer;">
+                <ng-container *ngIf="!usuariosService.loggedIng(); else loggedIng">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/signin">login</a></li>
+                    </ng-container>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/">Regresar</a></li>
                 <li class="nav-item dropdown" ngbDropdown>
@@ -18,13 +21,21 @@
                         <li><a class="dropdown-item" href="#!">Recientes</a></li>
                     </ul>
                 </li>
+                <ng-template #loggedIng>
+                    <li class="nav-item ml-auto">
+                      <a class="nav-link btnLogout" routerLinkActive="active" routerLink="/perfil" >Mi Perfil</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                      <a class="nav-link btnLogout"  (click)="usuariosService.logout()">Cerrar</a>
+                    </li>
+                  </ng-template>  
             </ul>
             <form class="d-flex ml-auto">
                 <button class="btn btn-outline-dark" type="button"  (click)="abrirNewApp(processCompra)">
                     <!-- <i class="bi-cart-fill me-1"></i> -->
                     <fa-icon [icon]="faShoppingCart">Menu</fa-icon>
                     Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">{{Cant.length}}</span>
                 </button>
             </form>
         </div>
@@ -45,6 +56,7 @@
           </button>
         </div>
         <div class="modal-body">
+          
             <table class="table table-hover">
                 <thead class="thead-dark">
                     <tr>
@@ -55,17 +67,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr *ngFor="let item of Items">
                         <th scope="row"></th>
-                        <td>producto 1</td>
-                        <td>1</td>
-                        <td>$.1000</td>
+                        <td>{{item.nombreProducto}}</td>
+                        <td>{{item.cantidad}}</td>
+                        <td>${{item.precio}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-outline-danger" (click)="modal.close('Save click')">Cerrar</button>
-          <button type="button" class="btn btn-outline-dark" routerLink="/processcompra" (click)="modal.close('Save click')">Procesar</button>
+            <ng-container *ngIf="!usuariosService.loggedIng(); else loggedIng">
+                <a class="btn btn-outline-warning" routerLink="/signin" style="cursor: pointer;">Registrate</a>
+                </ng-container>
+            <ng-template #loggedIng>
+                <button type="button" class="btn btn-outline-dark" routerLink="/processcompra" (click)="modal.close('Save click')">Procesar</button>
+            </ng-template>  
+
         </div>
       </ng-template>

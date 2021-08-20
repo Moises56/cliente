@@ -1,3 +1,7 @@
 .bg-navBar{
     background-color: black;
 }
+
+.btnLogout{
+    cursor: pointer;
+}
